@@ -1,0 +1,23 @@
+{
+  "name": "SuperResidentRaverStarterKitWin8",
+  "version": "0.0.0",
+  "description": "1.3.0",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gamecook/super-resident-raver-starter-kit.git"
+  },
+  "author": "Jesse Freeman",
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "gitHead": "9cb42ceab42316c3acdd88b09b284e33d71fb232",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "impact-weltmeister": "~0.1.2",
+    "grunt-express-server": "~0.4.0",
+    "express": "~3.2.6"
+  }
+}

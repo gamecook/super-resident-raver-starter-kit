@@ -21,3 +21,4 @@ weltmeister.html
 *.db
 *.sdf
 *.cache
+node_modules/*
