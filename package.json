@@ -18,6 +18,7 @@
     "grunt": "~0.4.1",
     "impact-weltmeister": "~0.1.2",
     "grunt-express-server": "~0.4.0",
-    "express": "~3.2.6"
+    "express": "~3.2.6",
+    "grunt-shell": "~0.2.2"
   }
 }
