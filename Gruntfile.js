@@ -6,6 +6,7 @@
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     
     var entityJSON = grunt.file.read("media/textures/entities.txt");
     var screensJSON = grunt.file.read("media/textures/screens.txt");
@@ -82,6 +83,17 @@
                 }]
             }
         },
+        uglify: {
+            tmp: {
+                options: {
+                    beautify: false,
+                    mangle: true
+                },
+                files: {
+                    'deploy/tmp/js/game.min.js': ['deploy/tmp/js/game.min.js']
+                }
+            }
+        },
         express: {
             options: {
                 background: true
@@ -111,6 +123,7 @@
                                 'copy:tmp',
                                 'replace:gamePath',
                                 'replace:textureAtlas',
+                                'uglify',
                                 'copy:web',
                                 'copy:wp8',
                                 'copy:blog',
