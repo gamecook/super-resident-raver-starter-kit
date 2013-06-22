@@ -28,7 +28,7 @@ ig.module(
             delay: -1,
             zIndex: -1,
             weapons: 3,
-            delayTime: 0,
+            delayTime: -1,
             weaponId: -1,
             init: function(x, y, settings) {
                 this.parent(x, y, settings);
