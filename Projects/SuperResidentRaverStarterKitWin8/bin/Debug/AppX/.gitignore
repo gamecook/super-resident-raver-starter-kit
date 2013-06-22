@@ -1,0 +1,13 @@
+/lib/impact/*
+/lib/weltmeister/*
+!/lib/weltmeister/config.js
+
+/deploy/*
+/tools/*
+/lib/weltmeister.html
+weltmeister.html
+
+*.db
+*.sdf
+*.cache
+node_modules/*
