@@ -160,6 +160,7 @@ ig.module(
             zIndex: 7,
             speed: .5,
             gravityFactor: 0,
+            collides: ig.Entity.COLLIDES.NONE,
             init: function (x, y, settings) {
                 this.parent(x, y, settings);
                 this.addAnim('idle', 1, [settings.value - 2]);
@@ -167,9 +168,8 @@ ig.module(
                 ig.game.sortEntitiesDeferred();
             },
             update: function () {
-                this.parent();
-
-                this.vel.y -= this.speed;
+                
+                this.pos.y -= this.speed;
 
                 if (this.idleTimer.delta() > this.delay) {
                     this.kill();

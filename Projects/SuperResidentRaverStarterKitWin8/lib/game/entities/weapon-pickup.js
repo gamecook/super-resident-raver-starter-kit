@@ -28,7 +28,7 @@ ig.module(
             delay: -1,
             zIndex: -1,
             weapons: 3,
-            delayTime: -1,
+            delayTime: 0,
             weaponId: -1,
             init: function(x, y, settings) {
                 this.parent(x, y, settings);
@@ -61,14 +61,13 @@ ig.module(
             onPickup: function (target) {
                 
                 if (target instanceof EntityPlayer && target.visible) {
-                    console.log("pickup", this.weaponId)
                     target.equip(this.weaponId);
                     this.kill();
                 }
             },
             update: function() {
 
-                if (this.delayTime != -1) {
+                if (this.delay != -1) {
                 
 
                 this.delayTime += ig.system.tick;
