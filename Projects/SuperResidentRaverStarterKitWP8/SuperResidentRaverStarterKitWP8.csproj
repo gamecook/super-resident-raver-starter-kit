@@ -146,7 +146,6 @@
     <Content Include="Html\index.html" />
     <Content Include="Html\js\console-log-wp8.js" />
     <Content Include="Html\js\game.min.js" />
-    <Content Include="Html\js\resize-game.js" />
     <Content Include="Html\media\fonts\nokia-24-white-shadow.png" />
     <Content Include="Html\media\fonts\nokia-36-white-shadow.png" />
     <Content Include="Html\media\sounds\gun-fire.mp3" />
