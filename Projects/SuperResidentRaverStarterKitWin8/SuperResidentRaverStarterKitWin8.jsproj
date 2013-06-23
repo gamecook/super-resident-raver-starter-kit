@@ -70,7 +70,6 @@
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
     <Content Include="js\game.min.js" />
-    <Content Include="js\resize-game.js" />
     <Content Include="lib\bootstrap\entities\base-actor.js" />
     <Content Include="lib\bootstrap\entities\base-advanced-door.js" />
     <Content Include="lib\bootstrap\entities\base-elevator.js" />
@@ -83,6 +82,7 @@
     <Content Include="lib\bootstrap\platforms\win8.js" />
     <Content Include="lib\bootstrap\plugins\camera.js" />
     <Content Include="lib\bootstrap\plugins\hit-area.js" />
+    <Content Include="lib\bootstrap\plugins\resize.js" />
     <Content Include="lib\bootstrap\plugins\menu.js" />
     <Content Include="lib\bootstrap\plugins\pause.js" />
     <Content Include="lib\bootstrap\plugins\texture-atlas.js" />

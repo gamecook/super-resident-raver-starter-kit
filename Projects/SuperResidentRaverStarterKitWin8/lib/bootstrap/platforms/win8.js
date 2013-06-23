@@ -13,6 +13,7 @@ ig.module(
     'bootstrap.platforms.win8'
 )
     .requires(
+    'bootstrap.plugins.resize',
     'impact.input',
     'impact.game'
 )
@@ -43,7 +44,7 @@ ig.module(
 
             licenseInfo = initLicense();
 
-            win8ResizeGame = function (event) {
+            win8ResizeGame = function(event) {
                 var viewStates = Windows.UI.ViewManagement.ApplicationViewState;
                 var newViewState = Windows.UI.ViewManagement.ApplicationView.value;
 
@@ -52,8 +53,8 @@ ig.module(
                     ig.game.togglePause(true);
                 }
 
-                resizeGame();
-            }
+                ig.resizeGame();
+            };
             
             sendToStore = function () {
                 var uri = new Windows.Foundation.Uri(currentApp.linkUri.rawUri);

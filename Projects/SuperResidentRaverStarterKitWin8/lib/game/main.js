@@ -11,6 +11,7 @@ ig.module(
     'game.main'
 )
     .requires(
+    'bootstrap.plugins.resize',
     'bootstrap.plugins.hit-area',
     'impact.game',
     'bootstrap.platforms.win8',
@@ -97,8 +98,8 @@ ig.module(
 
             ig.main('#canvas', StartScreen, 60, width, height, 1);
 
-            if (window.resizeGame)
-                window.resizeGame();
+            if (ig.resizeGame)
+                ig.resizeGame();
 
         };
 
