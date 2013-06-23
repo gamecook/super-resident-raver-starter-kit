@@ -24,6 +24,7 @@ ig.module(
             doorDelayTimer: null,
             callback: null,
             delayTime: -1,
+            autoLock: false,
             init: function (x, y, settings) {
                 this.parent(x, y, settings);
                 this.targets = ig.ksort(settings.target);
@@ -65,7 +66,7 @@ ig.module(
                 for (var i = 0; i < total; i++) {
                     var target = ig.game.getEntityByName(this.targets[i]);
                     if (typeof target.trigger != 'undefined')
-                        target.trigger();
+                        target.trigger(this);
                 }
             },
             update: function () {
@@ -106,8 +107,8 @@ ig.module(
                 this.currentAnim = this.anims.open;
                 this.currentAnim.rewind();
                 this.doorSFX.play();
-                //this.doorDelayTimer = null;
                 this.delayTime = -1;
+                
             },
             activate: function (value) {
 
@@ -124,20 +125,43 @@ ig.module(
             },
             onClose: function () {
                 this.parent();
-                this.activate(true);
+                this.activate(this.autoLock);
             },
             draw:function() {
                 if (this.locked)
                     return;
 
                 this.parent();
+            },
+            trigger: function (sourceEntity) {
+                var player = ig.game.player;
+                sourceEntity.delayTime = -1;
+                var newX = ((this.size.x - player.size.x) * .5) + this.pos.x;
+                var newY = this.pos.y + this.size.y - player.size.y;
+                var that = this;
+                ig.game.cameraFollow = { pos: { x: player.pos.x, y: player.pos.y }, size: { x: player.size.x, y: player.size.y } };
+                player.doorTween = TweenLite.to(ig.game.cameraFollow.pos, 1.5, {
+                    x: newX, y: newY,
+                    onComplete: function () {
+                        player.pos.x = ig.game.cameraFollow.pos.x;
+                        player.pos.y = ig.game.cameraFollow.pos.y;
+                        ig.game.cameraFollow = player;
+                        player.currentDoor = that;
+                        that.target = player;
+                        that.delayTime = 0;
+                        // destroy tween
+                        player.doorTween.kill();
+                        player.doorTween = null;
+                    }
+                });
+
+                
             }
         })
         
         EntityPlayer.inject({
             currentDoor: null,
             atDoor: function (door) {
-                //if (this.standing)
                 this.currentDoor = door;
             },
             openDoor: function (callback) {
@@ -146,8 +170,6 @@ ig.module(
                     this.visible = false;
                     this.vel.x = this.vel.y = 0;
                     this.accel.x = this.accel.y = 0;
-
-                    //this.type = ig.Entity.TYPE.NONE;
                     this.collides = ig.Entity.COLLIDES.NONE;
 
                 }
@@ -157,13 +179,13 @@ ig.module(
                     this.currentDoor.close(callback);
                     this.currentDoor = null;
                     this.visible = true;
-                    this.collides = ig.Entity.COLLIDES.ACTIVE
+                    this.collides = ig.Entity.COLLIDES.ACTIVE;
                 }
             },
             openPressed: function () {
 
                 if (this.currentDoor) {
-                    if (this.currentDoor.isOpening || this.currentDoor.isClosing)
+                    if (this.currentDoor.isOpening || this.currentDoor.isClosing || this.doorTween)
                         return;
 
                     if (this.visible) {

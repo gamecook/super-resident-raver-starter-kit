@@ -5,8 +5,7 @@
  *  @date: June 2013
  *  @copyright (c) 2013 Jesse Freeman, under The MIT License (see LICENSE)
  *
- *  v1.1.0
- *  - Refactored pluggin to now inject hit area logic into the input class.
+ *  v1.1.0 - Refactored pluggin to now inject hit area logic into the input class.
  */
 ig.module(
     'bootstrap.plugins.hit-area'
@@ -638,7 +637,7 @@ ig.module(
                     if (!this.locks[action]) {
                         this.presses[action] = true;
                         this.locks[action] = true;
-                        console.log(action, "pressed");
+                        //console.log(action, "pressed");
                     }
                 }
 
@@ -659,7 +658,7 @@ ig.module(
                 ev.preventDefault();
 
                 var hits = this.pointers[ev.pointerId].hits;
-                console.log("release", hits);
+                //console.log("release", hits);
                 var total = hits.length;
                 for (var i = 0; i < total; i++) {
                     var action = hits[i];
@@ -672,7 +671,7 @@ ig.module(
                 var newHitArea = new Rectangle(x, y, width, height, debugColor);
                 newHitArea.name = name;
                 newHitArea.touchType = touchType || "any";
-                console.log("type", newHitArea.touchType);
+                //console.log("type", newHitArea.touchType);
                 this.hitAreas.push(newHitArea);
                 return newHitArea;
             },

@@ -48,7 +48,6 @@ ig.module(
                 this.currentAnim = this.anims.walk;
             },
             onUpdateAI: function () {
-
                 var dist = this.distanceTo(ig.game.player);
                 if (dist < this.safeZone && this.spriteId != 1)
                 {
@@ -57,10 +56,9 @@ ig.module(
                     this.setupAnimation(0);
                 }
                 
-                if (dist < this.blastRadius) {
+                if (dist < this.blastRadius && ig.game.player.visible) {
                     this.explode();
                 }
-                
                 this.parent();
             },
             check: function (other) {

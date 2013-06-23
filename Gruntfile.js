@@ -172,6 +172,9 @@
             dev: {
                 path: 'http://localhost:8080/index.html'
             },
+            editor: {
+                path: 'http://localhost:8080/weltmeister.html'
+            },
             web: {
                 path: 'http://localhost:8080/Deploy/Web/index.html'
             }
@@ -180,7 +183,7 @@
 
     
     // Default task(s).
-    grunt.registerTask('default', ['express:dev', 'open:dev', 'watch']);
+    grunt.registerTask('default', ['express:dev', 'open:dev', 'open:editor','watch']);
     grunt.registerTask('bake', ['clean:deploy',
                                 'copy:tmp',
                                 'replace:textureAtlas',
