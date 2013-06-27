@@ -1,5 +1,5 @@
 ﻿/**
- *  @door.js
+ *  @elevator.js
  *  @version: 1.00
  *  @author: Jesse Freeman
  *  @date: May 2012

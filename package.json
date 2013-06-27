@@ -16,7 +16,6 @@
   "gitHead": "9cb42ceab42316c3acdd88b09b284e33d71fb232",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "impact-weltmeister": "~0.1.2",
     "grunt-express-server": "~0.4.0",
     "express": "~3.2.6",
     "grunt-shell": "~0.2.2",
@@ -25,6 +24,7 @@
     "grunt-text-replace": "~0.3.2",
     "grunt-contrib-clean": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.2",
-    "grunt-open": "~0.2.0"
+    "grunt-open": "~0.2.0",
+    "impact-weltmeister": "~0.1.4"
   }
 }

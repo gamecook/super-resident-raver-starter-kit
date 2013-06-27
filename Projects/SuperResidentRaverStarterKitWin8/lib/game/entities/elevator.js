@@ -29,6 +29,7 @@ ig.module(
             offset: { x: 20, y: 65 },
             speed: 100,
             topOffset: -25,
+            pasue: false,
             init: function (x, y, settings) {
                 this.parent(x, y, settings);
 
@@ -38,6 +39,10 @@ ig.module(
                 this.addTextureAtlasAnim(atlas, 'up', 1, ['elevator-02.png']);
             },
             update: function () {
+
+                if (this.pasue)
+                    return;
+
                 this.parent();
 
                 if (this.angle < 0)

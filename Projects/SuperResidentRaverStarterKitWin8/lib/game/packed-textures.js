@@ -34,8 +34,6 @@ ig.module(
                 // Attach these to the ig object
                 ig.entitiesTextureAtlas = new ig.TextureAtlas("media/textures/entities.png", this.entityJSON);
                 ig.screensTextureAtlas = new ig.TextureAtlas("media/textures/screens.png", this.screenJSON);
-                //ig.nokia36WhiteShadowTextureAtlas = new ig.TextureAtlas("media/textures/nokia-36-white-shadow.png");
-                //ig.nokia24WhiteShadowTextureAtlas = new ig.TextureAtlas("media/textures/nokia-24-white-shadow.png");
             },
             
         });

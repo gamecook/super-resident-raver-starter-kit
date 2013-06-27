@@ -119,14 +119,6 @@ ig.module(
             equip:function (target) {
                 this.equipment.push(target);
             },
-            update:function () {
-
-
-                if (this.visible)
-                    this.updateAnimation();
-
-                this.parent();
-            },
             updateInvicibleEffect:function () {
                 //TODO maybe we need to add invincible to draw or consolidate the two
                 if (this.captionTimer.delta() > this.invincibleDelay && this.invincibleDelay != -1) {
@@ -147,6 +139,8 @@ ig.module(
                 // Exit draw call if the entity is not visible
                 if (!this.visible)
                     return;
+                else
+                    this.updateAnimation();
 
                 this.parent();
             },

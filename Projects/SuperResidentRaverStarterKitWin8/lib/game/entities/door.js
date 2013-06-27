@@ -19,7 +19,8 @@ ig.module(
             _wmIgnore: false,
             size: { x: 80, y: 160 },
             doorSFX: new ig.Sound('media/sounds/open-door.*'),
-            weapons: -1,
+            weaponId: -1,
+            totalWeapons: 3,
             delay: 10,
             doorDelayTimer: null,
             callback: null,
@@ -46,8 +47,10 @@ ig.module(
             },
             onOpen: function (value) {
                 // Use this to have doors equp weapons
-                if (this.weapons != -1)
-                    this.target.equip(ig.utils.randomRange(0, this.weapons));
+                if (this.weaponId == 0)
+                    this.target.equip(ig.utils.randomRange(0, this.totalWeapons));
+                else if (this.weaponId > 0)
+                    this.target.equip(this.weaponId);
 
                 this.delayTime = 0;
                 // Make sure we don't spawn an entity when the player is in the door

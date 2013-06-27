@@ -19,7 +19,7 @@ ig.module(
         EntityHealthPickup = EntityBaseItem.extend({
             _wmIgnore: false,
             powerUpProperty: "health",
-            value: .5,
+            restore: .5,
             init: function(x, y, settings) {
                 this.parent(x, y, settings);
 
@@ -32,7 +32,7 @@ ig.module(
             onPickup: function (target) {
 
                 if (target instanceof EntityPlayer && target.visible) {
-                    target.health += target.healthMax * this.value;
+                    target.health += target.healthMax * this.restore;
                     if (target.health > target.healthMax) target.health = target.healthMax;
                     this.kill();
                 }

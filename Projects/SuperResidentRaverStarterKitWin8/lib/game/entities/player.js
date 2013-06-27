@@ -22,7 +22,6 @@ ig.module(
             offset:{ x:20, y:5 },
             hurtSFX: new ig.Sound('media/sounds/hurt.*'),
             thudSFX: new ig.Sound('media/sounds/thud.*'),
-            powerupSFX: new ig.Sound('media/sounds/power-up.*'),
             maxVel:{ x:300, y:500 },
             friction:{ x:1500, y:0 },
             accelGround:1500,
@@ -82,6 +81,8 @@ ig.module(
             },
             update:function () {
 
+                this.parent();
+
                 // Right
                 if (this.moving.right > 0) {
                     var accel = this.standing ? this.accelGround : this.accelAir;
@@ -102,7 +103,6 @@ ig.module(
                     this.vel.x = this.accel.x = this.moving.right = this.moving.left = 0;
                 }
 
-                this.parent();
             },
             rightDown: function (percent) {
                 if (!percent) percent = 1;
@@ -160,22 +160,6 @@ ig.module(
             },
             onLand: function() {
                 this.thudSFX.play();
-            },
-            onGotoNextLevel: function () {
-                this.gotoNextLevel = true;
-                this.nextSafeZone = this.pos.y + this.size.y + 200;
-                this.vel.y = 500;
-                this.vel.x = this.accel.x = this.accel.y = 0;
-            },
-            handleMovementTrace: function (res) {
-
-                if (this.gotoNextLevel) {
-                    this.pos.x += this.vel.x * ig.system.tick;
-                    this.pos.y += this.vel.y * ig.system.tick;
-                }
-                else {
-                    this.parent(res);
-                }
             },
             onDeathAnimation:function () {
                 ig.game.spawnEntity(EntityDeathExplosion, this.pos.x, this.pos.y, { colorOffset:this.bloodColorOffset, callBack:this.onKill });
