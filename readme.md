@@ -35,9 +35,9 @@ player gets to the exit which takes them back to the splash screen, ending the
 game.
 
 While the screenshots are helpful to get a sense of how the game looks, I
-suggest playing the game online at [http://jessefreeman.com/games/play/super-
-resident-raver-starterkit](http://jessefreeman.com/games/play/super-resident-
-raver-starterkit).
+suggest playing the game online at
+[http://jessefreeman.com/games/play/super-resident-raver-game](
+http://jessefreeman.com/games/play/super-resident-raver-game).
 
 ## Features
 
