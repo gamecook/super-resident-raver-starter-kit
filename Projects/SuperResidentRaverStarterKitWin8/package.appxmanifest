@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="f8a977b3-13b7-47ed-b5c3-d16c079cbfbf" Version="1.0.0.0" Publisher="CN=Jesse" />
+  <Properties>
+    <DisplayName>SuperResidentRaverStarterKitWin8</DisplayName>
+    <PublisherDisplayName>Jesse</PublisherDisplayName>
+    <Logo>images\storelogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="SuperResidentRaverStarterKitWin8" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="SuperResidentRaverStarterKitWin8" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="images\splashscreen.png" BackgroundColor="#000000" />
+      </VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>

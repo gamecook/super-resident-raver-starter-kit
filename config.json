@@ -1,0 +1,7 @@
+{
+	"project": "Super Resident Raver Starter Kit",
+	"rootProject": "./Projects/SuperResidentRaverStarterKitWin8/",
+    "wp8Project": "./Projects/SuperResidentRaverStarterKitWP8/",
+    "deployDir": "./Deploy/",
+    "blogRootPath": "/wp-content/games/super-resident-raver-starter-kit/media/"
+}
